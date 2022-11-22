@@ -4,16 +4,25 @@
    </div>
 <% end %>
 
+<% if false %>
 <div class="alert alert-warning">
   <p class="lead">
-    Wrong Guesses:
+    Chances left:
+    <span class="guesses"><%= @game.attempts_left %></span>
+  </p>
+</div>
+<% end %>
+
+<div class="alert alert-warning">
+  <p class="lead">
+    Wrongly guessed letters:
     <span class="guesses"><%= @game.wrong_guesses %></span>
   </p>
 </div>
 
 <p class="alert alert-success">
-  Word so far:
-  <span class="word"><%= @game.word_with_guesses %></span>
+  Guessed word so far:
+   <span class="word"><%= @game.word_with_guesses %></span>
 </p>
 
 <form action="/guess" method="post">
